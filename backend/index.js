@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 // Middleware for handling CORS POLICY
-// Option 1:Allow AllOrigins with Default of cors(*)
+// Option 1: Allow All Origins with Default of cors(*)
 app.use(cors());
 // Option 2: Allow Custom Origins
 // app.use(
@@ -21,9 +21,9 @@ app.use(cors());
 //   })
 // );
 
-app.get('/', (req, res) => {
-  console.log(req);
-  return res.status(234).send('Welcome To MERN Stack Tutorial');
+app.get('/', (request, response) => {
+  console.log(request);
+  return response.status(234).send('Welcome To MERN Stack Tutorial');
 });
 
 app.use('/books', booksRoute);
